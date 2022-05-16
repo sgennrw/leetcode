@@ -1,5 +1,3 @@
-const { cp } = require("fs");
-
 const isPalindrome = (x) => {
   return x.toString().split("").reverse().join("") === x.toString();
 };
