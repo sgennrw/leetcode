@@ -96,12 +96,12 @@ const addTwoNumbers = (l1, l2) => {
 
   while (l1 || l2 || sum) {
     const res = sum + (l1?.val || 0) + (l2?.val || 0);
-    curAns.next = new ListNode(res % 10)
-    sum = Math.floor(res /10)
+    curAns.next = new ListNode(res % 10);
+    sum = Math.floor(res / 10);
 
-    l1 = l1?.next
-    l2 = l2?.next
-    curAns = curAns.next
+    l1 = l1?.next;
+    l2 = l2?.next;
+    curAns = curAns.next;
   }
 
   return ans.next;
@@ -121,9 +121,32 @@ const addTwoNumbers = (l1, l2) => {
   // return ans;
 };
 
+const isParenthesesValid = (s) => {
+  const OPENS = ["(", "[", "{"];
+  const CLOSES = [")", "]", "}"];
+
+  const stack = [];
+
+  for (current of s) {
+    const isOpen = OPENS.indexOf(current) >= 0;
+    if (isOpen) {
+      stack.push(current);
+    } else {
+      const open = stack.pop();
+      if (OPENS.indexOf(open) !== CLOSES.indexOf(current)) {
+        stack.push("");
+        break;
+      }
+    }
+  }
+
+  return !stack.length;
+};
+
 module.exports = {
   isPalindrome,
   romanToInt,
   longestCommonPrefix,
   addTwoNumbers,
+  isParenthesesValid,
 };

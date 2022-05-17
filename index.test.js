@@ -3,6 +3,7 @@ const {
   romanToInt,
   longestCommonPrefix,
   addTwoNumbers,
+  isParenthesesValid
 } = require("./index");
 const { createListNode } = require("./helpers/ListNode");
 
@@ -39,3 +40,11 @@ test("addTwoNumbers", () => {
     ).print()
   ).toStrictEqual([8, 9, 9, 9, 0, 0, 0, 1]);
 });
+
+test.only("isParenthesesValid", () => {
+  expect(isParenthesesValid("()")).toBe(true)
+  expect(isParenthesesValid("()[]{}")).toBe(true)
+  expect(isParenthesesValid("(")).toBe(false)
+  expect(isParenthesesValid("(]")).toBe(false)
+  expect(isParenthesesValid("((((((())]]))))]")).toBe(false)
+})
