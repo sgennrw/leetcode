@@ -1,4 +1,10 @@
-const { isPalindrome, romanToInt, longestCommonPrefix } = require("./index");
+const {
+  isPalindrome,
+  romanToInt,
+  longestCommonPrefix,
+  addTwoNumbers,
+} = require("./index");
+const { createListNode } = require("./helpers/ListNode");
 
 test("isPalindrome", () => {
   expect(isPalindrome(123)).toBe(false);
@@ -17,4 +23,19 @@ test("longestCommonPrefix", () => {
   expect(longestCommonPrefix(["dog", "dodo"])).toBe("do");
   expect(longestCommonPrefix(["dog"])).toBe("dog");
   expect(longestCommonPrefix(["", ""])).toBe("");
+});
+
+test("addTwoNumbers", () => {
+  expect(
+    addTwoNumbers(createListNode([2, 4, 3]), createListNode([5, 6, 4])).print()
+  ).toStrictEqual([7, 0, 8]);
+  expect(
+    addTwoNumbers(createListNode([0]), createListNode([0])).print()
+  ).toStrictEqual([0]);
+  expect(
+    addTwoNumbers(
+      createListNode([9, 9, 9, 9, 9, 9, 9]),
+      createListNode([9, 9, 9, 9])
+    ).print()
+  ).toStrictEqual([8, 9, 9, 9, 0, 0, 0, 1]);
 });
