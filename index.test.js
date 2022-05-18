@@ -3,7 +3,8 @@ const {
   romanToInt,
   longestCommonPrefix,
   addTwoNumbers,
-  isParenthesesValid
+  isParenthesesValid,
+  mergeTwoSortedLists,
 } = require("./index");
 const { createListNode } = require("./helpers/ListNode");
 
@@ -41,10 +42,35 @@ test("addTwoNumbers", () => {
   ).toStrictEqual([8, 9, 9, 9, 0, 0, 0, 1]);
 });
 
-test.only("isParenthesesValid", () => {
-  expect(isParenthesesValid("()")).toBe(true)
-  expect(isParenthesesValid("()[]{}")).toBe(true)
-  expect(isParenthesesValid("(")).toBe(false)
-  expect(isParenthesesValid("(]")).toBe(false)
-  expect(isParenthesesValid("((((((())]]))))]")).toBe(false)
-})
+test("isParenthesesValid", () => {
+  expect(isParenthesesValid("()")).toBe(true);
+  expect(isParenthesesValid("()[]{}")).toBe(true);
+  expect(isParenthesesValid("(")).toBe(false);
+  expect(isParenthesesValid("(]")).toBe(false);
+  expect(isParenthesesValid("((((((())]]))))]")).toBe(false);
+});
+
+test("mergeTwoSortedLists", () => {
+  expect(
+    mergeTwoSortedLists(
+      createListNode([1, 2, 4]),
+      createListNode([1, 3, 4])
+    ).print()
+  ).toStrictEqual([1, 1, 2, 3, 4, 4]);
+  expect(
+    mergeTwoSortedLists(createListNode([1, 1, 1]), createListNode([2])).print()
+  ).toStrictEqual([1, 1, 1, 2]);
+  expect(mergeTwoSortedLists(null, null)).toStrictEqual(null);
+  expect(mergeTwoSortedLists(null, createListNode([0])).print()).toStrictEqual([
+    0,
+  ]);
+  expect(mergeTwoSortedLists(createListNode([1]), null).print()).toStrictEqual([
+    1,
+  ]);
+  expect(
+    mergeTwoSortedLists(
+      createListNode([-10, -9, -6, -4, 1, 9, 9]),
+      createListNode([-5, -3, 0, 7, 8, 8])
+    ).print()
+  ).toStrictEqual([-10, -9, -6, -5, -4, -3, 0, 1, 7, 8, 8, 9, 9]);
+});
