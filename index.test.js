@@ -1,12 +1,20 @@
 const {
+  twoSum,
   isPalindrome,
   romanToInt,
   longestCommonPrefix,
   addTwoNumbers,
   isParenthesesValid,
   mergeTwoSortedLists,
+  searchInsertPosition,
 } = require("./index");
 const { createListNode } = require("./helpers/ListNode");
+
+test("twoSum", () => {
+  expect(twoSum([2,7,11,15], 9)).toStrictEqual([0,1])
+  expect(twoSum([3,2,4], 6)).toStrictEqual([1,2])
+  expect(twoSum([3,3], 6)).toStrictEqual([0,1])
+})
 
 test("isPalindrome", () => {
   expect(isPalindrome(123)).toBe(false);
@@ -73,4 +81,14 @@ test("mergeTwoSortedLists", () => {
       createListNode([-5, -3, 0, 7, 8, 8])
     ).print()
   ).toStrictEqual([-10, -9, -6, -5, -4, -3, 0, 1, 7, 8, 8, 9, 9]);
+});
+
+test("searchInsertPosition", () => {
+  expect(searchInsertPosition([1, 3, 5, 6], 0)).toBe(0);
+  expect(searchInsertPosition([1, 3, 5, 6], 5)).toBe(2);
+  expect(searchInsertPosition([1, 3, 5, 6], 2)).toBe(1);
+  expect(searchInsertPosition([1, 3, 5, 6], 7)).toBe(4);
+  expect(searchInsertPosition([1, 3], 4)).toBe(2);
+  expect(searchInsertPosition([1, 3, 5], 3)).toBe(1);
+  expect(searchInsertPosition([1], 0)).toBe(0);
 });

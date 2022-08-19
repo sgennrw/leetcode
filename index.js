@@ -1,5 +1,15 @@
 const { ListNode } = require("./helpers/ListNode");
 
+const twoSum = (nums, target) => {
+  for(let i = 0; i < nums.length; i++) {
+    const res = target - nums[i]
+    const idxRes = nums.indexOf(res, i + 1)
+    if(idxRes >= 0 && idxRes != i) return [i, idxRes]
+  }
+
+  return []
+}
+
 const isPalindrome = (x) => {
   return x.toString().split("").reverse().join("") === x.toString();
 };
@@ -158,16 +168,27 @@ const mergeTwoSortedLists = (list1, list2) => {
     temp = temp.next;
   }
 
-  temp.next = list1 || list2
+  temp.next = list1 || list2;
 
   return ans.next;
 };
 
+const searchInsertPosition = (nums, target) => {
+  // Solution 1: use Javascript's function
+  if (target > nums[nums.length - 1]) return nums.length;
+  return nums.findIndex((num) => num >= target);
+
+  // Solution 2: binary search ¯\_( ͡❛ ͜ʖ ͡❛)_/¯
+  
+};
+
 module.exports = {
+  twoSum,
   isPalindrome,
   romanToInt,
   longestCommonPrefix,
   addTwoNumbers,
   isParenthesesValid,
   mergeTwoSortedLists,
+  searchInsertPosition,
 };
