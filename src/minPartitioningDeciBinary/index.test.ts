@@ -1,4 +1,4 @@
-const { minPartitions } = require("./index");
+import { minPartitions } from "./index.js";
 
 describe("Partitioning into minimum number of deci-binary numbers", () => {
   const testCases = [

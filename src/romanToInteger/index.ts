@@ -25,6 +25,4 @@ const romanToInt = (s) => {
   return result;
 };
 
-module.exports = {
-  romanToInt,
-};
+export { romanToInt };

@@ -1,4 +1,4 @@
-const { solution1, solution2, solution3 } = require("./index");
+import { solution1, solution2, solution3 } from "./index.js";
 
 describe("Longest Common Prefix", () => {
   const testCases = [

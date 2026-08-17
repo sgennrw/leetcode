@@ -6,7 +6,7 @@ const CLOSES = [")", "]", "}"];
 const isParenthesesValid = (s) => {
   const stack = [];
 
-  for (current of s) {
+  for (const current of s) {
     const isOpen = OPENS.indexOf(current) >= 0;
     if (isOpen) {
       stack.push(current);
@@ -22,6 +22,4 @@ const isParenthesesValid = (s) => {
   return !stack.length;
 };
 
-module.exports = {
-  isParenthesesValid,
-};
+export { isParenthesesValid };

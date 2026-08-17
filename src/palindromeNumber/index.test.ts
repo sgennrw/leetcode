@@ -1,4 +1,4 @@
-const { isPalindrome } = require("./index");
+import { isPalindrome } from "./index.js";
 
 describe("Palindrome Number", () => {
   const testCases = [

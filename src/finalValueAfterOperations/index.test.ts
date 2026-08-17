@@ -1,4 +1,4 @@
-const { finalValueAfterOperations } = require("./index");
+import { finalValueAfterOperations } from "./index.js";
 
 describe("Final Value of Variable After Performing Operations", () => {
   const testCases = [

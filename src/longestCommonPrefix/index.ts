@@ -5,7 +5,7 @@ const solution1 = (strs) => {
   let prefix = strs[0];
 
   for (let i = 1; i < strs.length; i++) {
-    for ([j, s] of [...prefix].entries()) {
+    for (const [j, s] of [...prefix].entries()) {
       if (s !== strs[i][j]) {
         prefix = strs[i].substr(0, j);
         break;
@@ -57,8 +57,4 @@ const solution3 = (strs) => {
   return prefix;
 };
 
-module.exports = {
-  solution1,
-  solution2,
-  solution3
-}
+export { solution1, solution2, solution3 };

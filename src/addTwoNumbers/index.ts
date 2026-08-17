@@ -1,13 +1,13 @@
 /** https://leetcode.com/problems/add-two-numbers/ */
 
-const { ListNode } = require('../helpers/ListNode')
+import { ListNode } from '../helpers/ListNode.js';
 
 /**
  * @param {ListNode} l1
  * @param {ListNode} l2
  * @return {ListNode}
  */
- const addTwoNumbers = (l1, l2) => {
+ const addTwoNumbers = (l1: ListNode | null, l2: ListNode | null) => {
   const ans = new ListNode();
   let curAns = ans;
   let sum = 0;
@@ -39,6 +39,4 @@ const { ListNode } = require('../helpers/ListNode')
   // return ans;
 };
 
-module.exports = {
-  addTwoNumbers
-}
+export { addTwoNumbers };

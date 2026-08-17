@@ -1,5 +1,5 @@
-const { addTwoNumbers } = require("./index");
-const { createListNode } = require('../helpers/ListNode')
+import { addTwoNumbers } from "./index.js";
+import { createListNode } from '../helpers/ListNode.js';
 
 describe("Add Two Numbers", () => {
   const testCases = [

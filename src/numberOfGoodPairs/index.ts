@@ -1,6 +1,6 @@
 /** https://leetcode.com/problems/number-of-good-pairs/ */
 
-const numIdenticalPairSol1 = (nums) => {
+const numIdenticalPairSol1 = (nums: number[]) => {
   let count = 0;
   for(let i = 0; i < nums.length - 1 ;i++) {
     for(let j = i + 1; j < nums.length; j++) {
@@ -13,8 +13,8 @@ const numIdenticalPairSol1 = (nums) => {
   return count;
 };
 
-const numIdenticalPairSol2 = (nums) => {
-  const map = {};
+const numIdenticalPairSol2 = (nums: number[]) => {
+  const map: Record<number, number> = {};
   nums.forEach((num) => {
     map[num] = ++map[num] || 1;
   });
@@ -29,7 +29,4 @@ const numIdenticalPairSol2 = (nums) => {
   return count;
 };
 
-module.exports = {
-  numIdenticalPairSol1,
-  numIdenticalPairSol2,
-};
+export { numIdenticalPairSol1, numIdenticalPairSol2 };

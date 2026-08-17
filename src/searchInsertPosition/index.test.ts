@@ -1,7 +1,7 @@
-const { searchInsertPosition } = require("./index");
+import { searchInsertPosition } from "./index.js";
 
 describe("Search Insert Position", () => {
-  const testCases = [
+  const testCases: { args: [number[], number]; expectRes: number }[] = [
     {
       args: [[1, 3, 5, 6], 0],
       expectRes: 0,

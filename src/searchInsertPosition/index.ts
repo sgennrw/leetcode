@@ -8,6 +8,4 @@ const searchInsertPosition = (nums, target) => {
   // todo: Solution 2: binary search ¯\_( ͡❛ ͜ʖ ͡❛)_/¯
 };
 
-module.exports = {
-  searchInsertPosition,
-};
+export { searchInsertPosition };

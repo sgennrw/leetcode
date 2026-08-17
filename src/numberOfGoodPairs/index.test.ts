@@ -1,4 +1,4 @@
-const { numIdenticalPairSol1, numIdenticalPairSol2 } = require("./index");
+import { numIdenticalPairSol1, numIdenticalPairSol2 } from "./index.js";
 
 describe("Number of Good Pairs", () => {
   const testCases = [

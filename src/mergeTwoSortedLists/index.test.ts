@@ -1,5 +1,5 @@
-const { mergeTwoSortedLists } = require('./index')
-const { createListNode} = require('../helpers/ListNode')
+import { mergeTwoSortedLists } from './index.js';
+import { createListNode } from '../helpers/ListNode.js';
 
 describe("Merge Two Sorted Lists", () => {
   const testCases = [

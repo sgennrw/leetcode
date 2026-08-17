@@ -1,4 +1,4 @@
-const { isParenthesesValid } = require("./index");
+import { isParenthesesValid } from "./index.js";
 
 describe("Valid Parentheses", () => {
   const testCases = [

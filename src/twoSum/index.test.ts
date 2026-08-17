@@ -1,7 +1,7 @@
-const { twoSum } = require("./index");
+import { twoSum } from "./index.js";
 
 describe("Two Sum", () => {
-  const testCases = [
+  const testCases: { args: [number[], number]; expectRes: number[] }[] = [
     {
       args: [[2, 7, 11, 15], 9],
       expectRes: [0, 1],

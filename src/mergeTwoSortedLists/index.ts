@@ -1,8 +1,8 @@
 /** https://leetcode.com/problems/merge-two-sorted-lists/ */
 
-const { ListNode } = require('../helpers/ListNode')
+import { ListNode } from '../helpers/ListNode.js';
 
-const mergeTwoSortedLists = (list1, list2) => {
+const mergeTwoSortedLists = (list1: ListNode | null, list2: ListNode | null) => {
   let ans = new ListNode();
   let temp = ans;
 
@@ -22,6 +22,4 @@ const mergeTwoSortedLists = (list1, list2) => {
   return ans.next;
 };
 
-module.exports = {
-  mergeTwoSortedLists
-}
+export { mergeTwoSortedLists };
